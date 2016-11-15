@@ -1,5 +1,21 @@
+/* globals window */
 import 'pixi';
 import 'p2';
 import Phaser from 'phaser';
 
-console.log(Phaser);
+import GameState from './states/GameState';
+import BootState from './states/BootState';
+import SplashState from './states/SplashState';
+
+class Game extends Phaser.Game {
+  constructor() {
+    super(window.innerWidth, window.innerHeight, Phaser.CANVAS, 'paint-canvas');
+    this.state.add('Boot', BootState, false);
+    this.state.add('Splash', SplashState, false);
+    this.state.add('Game', GameState, false);
+
+    this.state.start('Boot');
+  }
+}
+
+window.game = new Game();
