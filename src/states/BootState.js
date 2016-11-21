@@ -6,14 +6,14 @@ export default class BootState extends Phaser.State {
   }
 
   preload() {
-    console.log('preload');
+    this.stage.backgroundColor = '#DECCCC';
+    this.load.image('loading-progress', 'img/loading/progress.png');
   }
 
   create() {
-    console.log('create');
+    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    this.scale.pageAlignHorizontally = true;
+    this.scale.pageAlignVertically = true;
     this.state.start('Splash');
-  }
-
-  render() {
   }
 }
