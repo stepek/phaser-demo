@@ -4,6 +4,9 @@ import resources from './../resources';
 export default class BootState extends Phaser.State {
   preload() {
     const {width, height} = this.world;
+
+    this.add.sprite((width - 580) * 0.5, (height + 150) * 0.5, 'loading-background');
+
     const loadProgress = this.add.sprite((width - 540) * 0.5, (height + 170) * 0.5, 'loading-progress');
 
     this.load.setPreloadSprite(loadProgress);
@@ -20,6 +23,6 @@ export default class BootState extends Phaser.State {
   }
 
   create() {
-    this.state.start('Game');
+    this.state.start('MainMenu');
   }
 }

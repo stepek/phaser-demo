@@ -6,7 +6,8 @@ export default class BootState extends Phaser.State {
   }
 
   preload() {
-    this.stage.backgroundColor = '#DECCCC';
+    this.stage.backgroundColor = '#D6D6FF';
+    this.load.image('loading-background', 'img/loading/background.png');
     this.load.image('loading-progress', 'img/loading/progress.png');
   }
 
